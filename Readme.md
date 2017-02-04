@@ -6,9 +6,9 @@ Based on this awesome post [Alan Ivey](https://echo.co/blog/os-x-1010-yosemite-l
 
 ## Downloading
 
-You can grab the [script here](https://github.com/bamp/bamp.sh/raw/master/bamp.sh) (Option-click to download.)
+You can grab the [script here](https://raw.githubusercontent.com/nothnk/bamp/master/bamp.sh) (Option-click to download.)
 
-You'll need to `chmod a+x virtualhost.sh` in order to run it after downloading.
+You'll need to `chmod a+x bamp.sh` in order to run it after downloading.
 
 ## Options
 
