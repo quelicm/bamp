@@ -126,33 +126,33 @@ NameVirtualHost *:8443
 #
 # Set up permissions for VirtualHosts in ~/Sites
 #
-<Directory "${USERHOME}/Sites">
-    Options Indexes FollowSymLinks MultiViews
-    AllowOverride All
-    <IfModule mod_authz_core.c>
-        Require all granted
-    </IfModule>
-    <IfModule !mod_authz_core.c>
-        Order allow,deny
-        Allow from all
-    </IfModule>
-</Directory>
+#<Directory "${USERHOME}/Sites">
+#    Options Indexes FollowSymLinks MultiViews
+#    AllowOverride All
+#    <IfModule mod_authz_core.c>
+#        Require all granted
+#    </IfModule>
+#    <IfModule !mod_authz_core.c>
+#        Order allow,deny
+#        Allow from all
+#    </IfModule>
+#</Directory>
 
 # For http://localhost in the users' Sites folder
-<VirtualHost _default_:8080>
-    ServerName localhost
-    DocumentRoot "${USERHOME}/Sites"
-</VirtualHost>
-<VirtualHost _default_:8443>
-    ServerName localhost
-    Include "${USERHOME}/Sites/ssl/ssl-shared-cert.inc"
-    DocumentRoot "${USERHOME}/Sites"
-</VirtualHost>
+#<VirtualHost _default_:8080>
+#    ServerName localhost
+#    DocumentRoot "${USERHOME}/Sites"
+#</VirtualHost>
+#<VirtualHost _default_:8443>
+#    ServerName localhost
+#    Include "${USERHOME}/Sites/ssl/ssl-shared-cert.inc"
+#    DocumentRoot "${USERHOME}/Sites"
+#</VirtualHost>
 
 #
 # VirtualHosts
 #
-
+Include ${USERHOME}/Sites/httpd-vhosts-manual.conf
 ## Manual VirtualHost template for HTTP and HTTPS
 #<VirtualHost *:8080>
 #  ServerName project.dev
@@ -222,7 +222,7 @@ openssl req \
   -out ~/Sites/ssl/selfsigned.crt
 
 echo 'Run apache';
-sudo brew services start httpd22
+brew services start httpd22
 
 echo 'RUN WITH PORT 80';
 

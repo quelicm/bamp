@@ -66,5 +66,12 @@ PHP-FPM: $(brew --prefix)/var/log/php-fpm.log
 MySQL: $(brew --prefix)/var/mysql/$(hostname).err
 ```
 
+## Compatibility
+
+This script has been tested on the following versions OSX
+
+- 10.11.4 (OSX El Capitan) | MacBook Pro (2015)
+
+
 ## Reference
 - https://linuxconfig.org/bash-scripting-tutorial
